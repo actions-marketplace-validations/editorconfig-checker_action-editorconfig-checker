@@ -16,9 +16,15 @@ For more information, reference the GitHub Help Documentation for [Creating a wo
 
 ### Inputs
 
-| Field     | Description                 |
-| --------- | --------------------------- |
-| `version` | Version (default: `latest`) |
+| Field          | Description                                                                    |
+| -------------- | ------------------------------------------------------------------------------ |
+| `version`      | editorconfig-checker version to install (default: `v4.0.1`)                    |
+| `github-token` | Token used to look up the release to download (default: `${{ github.token }}`) |
+
+The `version` default is a pinned tag rather than `latest`, so that pinning this
+action to a commit SHA also pins the editorconfig-checker binary it installs.
+Set `version: latest` to opt back into always installing the newest release,
+at the cost of the installed binary no longer being determined by your pin.
 
 ### Example workflow
 
